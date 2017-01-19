@@ -1,0 +1,7 @@
+https://expressjs.com/en/starter/hello-world.html
+
+https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+
+https://scotch.io/tutorials/use-expressjs-to-deliver-html-files
+
+https://expressjs.com/en/starter/static-files.html
