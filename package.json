@@ -1,0 +1,22 @@
+{
+  "name": "googlemaps",
+  "version": "1.0.0",
+  "description": "Small project to learn node, mongo and google maps api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhileshbhatia/Google-Maps-API.git"
+  },
+  "author": "Akhilesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhileshbhatia/Google-Maps-API/issues"
+  },
+  "homepage": "https://github.com/akhileshbhatia/Google-Maps-API#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
