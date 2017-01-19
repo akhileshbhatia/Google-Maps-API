@@ -24,7 +24,7 @@
             var id = this.id;
             if (id == "liShowCurLocatn")
                 me.ShowCurrentLocation("liShowCurLocatn");
-            else if (id == "liSetCurLocAsSrc")
+            else
                 me.SetCurrentLocationAsSource("liSetCurLocAsSrc");
         });
 
