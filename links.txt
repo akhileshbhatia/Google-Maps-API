@@ -1,7 +1,11 @@
 https://expressjs.com/en/starter/hello-world.html
 
-https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+https://scotch.io/tutorials/use-ejs-to-template-your-node-application(only read)
 
 https://scotch.io/tutorials/use-expressjs-to-deliver-html-files
 
 https://expressjs.com/en/starter/static-files.html
+
+https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
+
+http://stackoverflow.com/questions/20585055/how-to-fix-uncaught-invalidvalueerror-setposition-not-a-latlng-or-latlnglitera
