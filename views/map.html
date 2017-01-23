@@ -42,51 +42,50 @@
                     </span>
                   </a>
                 </li>
-                  <li class="liSearchOptions" id="liSetCurLocAsSrc">
-                    <a href="#">Set Current Location As Source
-                      <span style="margin-left:50px;display:none"  class="badge">
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                      </span></a>
-                    </li>
-                    </ul>
-                  </div>
-                </div>
+                <li class="liSearchOptions" id="liSetCurLocAsSrc">
+                  <a href="#">Set Current Location As Source
+                    <span style="margin-left:50px;display:none"  class="badge">
+                      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </span></a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-xs-8" id="divMap" style="margin-left: 10px; height: 495px; width: 98%">
-              </div>
-              <div id="divOuterDirectionPanel" class="col-xs-4" style="padding-right: 4px;display:none">
-                <div class="panel panel-info" style="margin-bottom: 0px">
-                  <div class="panel-heading">Directions Panel</div>
-                  <div class="panel-body">
-                    <div id="divDirectionPanel" style="height: 422px; overflow-y: scroll;">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer text-right">
-            <mark>Google Maps !</mark>
           </div>
         </div>
       </div>
-
-      <div id="divInfoWindowContent" class="hidden">
-        <h5>Tag Note to this place : </h5>
-        <form>
-          <div class="form-group" style="width: 300px">
-            <textarea class="form-control" rows="5" id="txtNote"></textarea>
-            <div class="text-right" style="margin-top: 5px">
-              <button class="btn btn-primary" onclick="SaveNote(event)" id="btnSave">Save</button>
-              <button class="btn btn-primary" onclick="ViewSavedNote(event)" id="btnView">View Saved Notes</button>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-8" id="divMap" style="margin-left: 10px; height: 495px; width: 98%">
+          </div>
+          <div id="divOuterDirectionPanel" class="col-xs-4" style="padding-right: 4px;display:none">
+            <div class="panel panel-info" style="margin-bottom: 0px">
+              <div class="panel-heading">Directions Panel</div>
+              <div class="panel-body">
+                <div id="divDirectionPanel" style="height: 422px; overflow-y: scroll;">
+                </div>
+              </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
+      <div class="panel-footer text-right">
+        <mark>Google Maps !</mark>
+      </div>
+    </div>
+  </div>
 
-    </body>
-    </html>
+  <div id="divInfoWindowContent" class="hidden">
+    <h5>Tag Note to this place : </h5>
+    <form>
+      <div class="form-group" style="width: 300px">
+        <textarea class="form-control" rows="5" id="txtNote"></textarea>
+        <div class="text-right" style="margin-top: 5px">
+          <button class="btn btn-primary" onclick="SaveNote(event)" id="btnSave">Save</button>
+          <button class="btn btn-primary" onclick="ViewSavedNote(event)" id="btnView">View Saved Notes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -53,11 +53,11 @@ var myMaps = {
         navigator.geolocation.getCurrentPosition(function(position){
           me.curPosition = {
             lat: position.coords.latitude,
-            long:position.coords.longitude
+            lng: position.coords.longitude
           };
           var marker = new google.maps.Marker({position: me.curPosition});
-          // marker.setMap(me.gblMapRef);
-          // me.gblMapRef.setCenter(me.curPosition);
+          marker.setMap(me.gblMapRef);
+          me.gblMapRef.setCenter(me.curPosition);
         },function(){
           console.log("Following error in receiving current location: "+failure.message);
         });
