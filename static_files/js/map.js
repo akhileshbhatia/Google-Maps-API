@@ -106,7 +106,6 @@ var myMaps = {
         //$("#" + id).find("span").show();
       }
     });
-    me.BindEvents();
   },
 
   CreateMap: function (latitude, longitude) {
