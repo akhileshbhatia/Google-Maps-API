@@ -11,3 +11,12 @@ app.get("/",function(req,res){
 app.listen(3000,function(){
   console.log("Server started at port 3000");
 });
+
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/mapsDb");
+
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+
+var router = require("./routes");
+app.use('/api',router);
