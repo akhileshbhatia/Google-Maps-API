@@ -7,7 +7,7 @@ router.post("/authenticate",function(req,res){
     if(err)
       res.send(err);
     else
-      res.send(data);
+      res.json(data);
   });
 });
 
