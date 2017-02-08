@@ -1,6 +1,5 @@
 var myMaps = {
   gblMapRef: null,
-  curPosition: null,
   Init: function () {
     var me = myMaps;
     me.InitializeMaps();
@@ -9,6 +8,7 @@ var myMaps = {
 
   BindEvents: function () {
     var me = myMaps;
+    
     $("#btnSearch").off("click");
     $("#btnSearch").on("click", function () {
       me.FindRoute($("#txtSource").val().trim(), $("#txtDestination").val().trim());
@@ -20,14 +20,17 @@ var myMaps = {
 
     $(".liSearchOptions").off("click");
     $(".liSearchOptions").on("click", function (event) {
-      if(this.id == "liShowCurLocatn"){
+      if(this.id == "liShowCurLocatn")
         me.ShowCurrentLocation(false);
-      }
-      else{
+      else
         me.ShowCurrentLocation(true);
-      }
     });
 
+    $("#logOff").off("click");
+    $("#logOff").on("click",function(){
+      sessionStorage.clear();
+      window.location.replace("/");
+    });
   },
 
   ShowCurrentLocation: function(setAsSource){
@@ -42,16 +45,16 @@ var myMaps = {
     }
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(function(position){
-        me.curPosition = {
+        var curPosition = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        var marker = new google.maps.Marker({position: me.curPosition});
+        var marker = new google.maps.Marker({position: curPosition});
         marker.setMap(me.gblMapRef);
-        me.gblMapRef.setCenter(me.curPosition);
+        me.gblMapRef.setCenter(curPosition);
         if(setAsSource){ // check if user wants to set current location as source
           var geocoder = new google.maps.Geocoder;
-          geocoder.geocode({"location":me.curPosition},function(results,status){ //get the address from the lat and long
+          geocoder.geocode({"location":curPosition},function(results,status){ //get the address from the lat and long
             if(status === "OK" && results[1]){
               $("#txtSource").val(results[1].formatted_address);
             }
@@ -134,5 +137,10 @@ var myMaps = {
 }
 
 $(function () {
+  if(sessionStorage.user!=null || sessionStorage.user!=undefined)
   myMaps.Init();
+  else{
+    sessionStorage.clear();
+    window.location.replace("/");
+  }
 });

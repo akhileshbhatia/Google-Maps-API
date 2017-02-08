@@ -4,8 +4,12 @@ var path = require("path");
 
 app.use(express.static("static_files"));
 
-app.get("/",function(req,res){
+app.get("/map",function(req,res){
   res.sendFile(path.join(__dirname + "/views"+"/map.html"));
+});
+
+app.get("/",function(req,res){
+  res.sendFile(path.join(__dirname + "/views"+"/login.html"));
 });
 
 app.listen(3000,function(){
