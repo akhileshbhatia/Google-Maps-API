@@ -10,5 +10,8 @@ https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
 Folder structure of a node/express project:
 http://stackoverflow.com/a/32969131/2932244
 
+Creating a simple rest api with node/express:
+https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
+
 Using mongoose with node/express app:
 https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
