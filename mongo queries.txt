@@ -1,0 +1,44 @@
+db.test2.insert({
+    "user_id" : "1",
+    "details" : [
+        {
+            "date" : "05 Oct 1993",
+            "search_info_list" : [
+                                    {"source" : "Nagpur", "destination" : "Amravati"},
+                                    {"source" : "Bhilai","destination" : "Raipur"}
+                                 ]
+        },
+        {
+            "date" : "06 Oct 1993",
+            "search_info_list" : [
+                                    {"source" : "New Delhi", "destination" : "Jaipur"},
+                                    {"source" : "Chennai", "destination" : "Bangalore"}
+                                 ]
+        }
+    ]
+ })
+ 
+ db.test2.insert({
+    "user_id" : "2",
+    "details" : [
+        {
+            "date" : "10 Oct 1993",
+            "search_info_list" : [
+                                    {"source" : "Bhopal", "destination" : "Ujjain"},
+                                    {"source" : "Jaipur","destination" : "Udaipur"}
+                                 ]
+        },
+        {
+            "date" : "11 Oct 1993",
+            "search_info_list" : [
+                                    {"source" : "Mumbai", "destination" : "New Delhi"},
+                                    {"source" : "Ooty", "destination" : "Dehradun"}
+                                 ]
+        }
+    ]
+ })
+ 
+ 
+ db.test2.aggregate([{$unwind : "$details"},
+                    {$match : {"details.date" : "05 Oct 1993"}}
+                    ])
