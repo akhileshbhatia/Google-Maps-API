@@ -42,3 +42,8 @@ db.test2.insert({
  db.test2.aggregate([{$unwind : "$details"},
                     {$match : {"details.date" : "05 Oct 1993"}}
                     ])
+					
+db.getCollection('test2').aggregate([{$unwind : "$details"},
+                                     {$match : {"user_id" : "1"}},
+                                     {$match : {"details.date" : "06 Oct 1993"}}
+                                    ])
