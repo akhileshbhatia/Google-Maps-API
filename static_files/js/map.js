@@ -8,7 +8,7 @@ var myMaps = {
 
   BindEvents: function () {
     var me = myMaps;
-    
+
     $("#btnSearch").off("click");
     $("#btnSearch").on("click", function () {
       me.FindRoute($("#txtSource").val().trim(), $("#txtDestination").val().trim());
@@ -137,10 +137,5 @@ var myMaps = {
 }
 
 $(function () {
-  if(sessionStorage.user!=null || sessionStorage.user!=undefined)
   myMaps.Init();
-  else{
-    sessionStorage.clear();
-    window.location.replace("/");
-  }
 });

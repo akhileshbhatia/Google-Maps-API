@@ -27,7 +27,6 @@ var login = {
           }
           else{
             $("#lblInvalidUser").hide();
-            sessionStorage.user = response[0].username;
             window.location.replace("/map");
           }
         },

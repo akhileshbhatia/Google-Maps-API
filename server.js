@@ -1,14 +1,26 @@
 var express = require("express");
 var app = express();
 var path = require("path");
+var session = require("express-session");
+
+app.use(session({
+  secret : "shsa",
+  resave : true,
+  saveUninitialized : true
+}));
 
 app.use(express.static("static_files"));
 
 app.get("/map",function(req,res){
-  res.sendFile(path.join(__dirname + "/views"+"/map.html"));
+  if(req.session.userId)
+    res.sendFile(path.join(__dirname + "/views"+"/map.html"));
+  else{
+    res.redirect("/");
+  }
 });
 
 app.get("/",function(req,res){
+  req.session.destroy();
   res.sendFile(path.join(__dirname + "/views"+"/login.html"));
 });
 

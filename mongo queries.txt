@@ -17,7 +17,7 @@ db.test2.insert({
         }
     ]
  })
- 
+
  db.test2.insert({
     "user_id" : "2",
     "details" : [
@@ -37,13 +37,34 @@ db.test2.insert({
         }
     ]
  })
- 
- 
+
+
  db.test2.aggregate([{$unwind : "$details"},
                     {$match : {"details.date" : "05 Oct 1993"}}
                     ])
-					
+
 db.getCollection('test2').aggregate([{$unwind : "$details"},
                                      {$match : {"user_id" : "1"}},
                                      {$match : {"details.date" : "06 Oct 1993"}}
                                     ])
+
+
+db.searchInfo.insert({
+    "user_id" : ObjectId("58b90dbd157666f20a73323b"),
+    "details" : [
+        {
+            "date" : ISODate("2017-03-14T18:30:00.000Z"),
+            "search_info_list" : [
+                                    {"source" : "Nagpur", "destination" : "Amravati"},
+                                    {"source" : "Bhilai","destination" : "Raipur"}
+                                 ]
+        },
+        {
+            "date" : ISODate("2017-03-13T18:30:00.000Z"),
+            "search_info_list" : [
+                                    {"source" : "New Delhi", "destination" : "Jaipur"},
+                                    {"source" : "Chennai", "destination" : "Bangalore"}
+                                 ]
+        }
+    ]
+ })
