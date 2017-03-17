@@ -22,13 +22,7 @@ var login = {
         contentType: "application/json",
         data: request,
         success: function(response){
-          if(response.length == 0){ //meaning no such user found
-            $("#lblInvalidUser").show();
-          }
-          else{
-            $("#lblInvalidUser").hide();
             window.location.replace("/map");
-          }
         },
         error: function(err){
           console.log(err);

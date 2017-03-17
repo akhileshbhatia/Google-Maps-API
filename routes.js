@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var account = require("./models/account");
+var searchInfo = require("./models/searchInfo");
 
 router.post("/authenticate",function(req,res){
   account.find({"username":req.body.username,"password":req.body.password},function(err,data){
@@ -12,5 +13,16 @@ router.post("/authenticate",function(req,res){
     }
   });
 });
+
+router.post("/check",function(req,res){
+  searchInfo.find({"user_id" : req.body.id}, function(err,data){
+    if(err){
+      res.send(err);
+    }
+    else {
+      res.json(data);
+    }
+  })
+})
 
 module.exports = router;

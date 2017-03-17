@@ -28,7 +28,6 @@ var myMaps = {
 
     $("#logOff").off("click");
     $("#logOff").on("click",function(){
-      sessionStorage.clear();
       window.location.replace("/");
     });
   },
