@@ -14,8 +14,8 @@ router.post("/authenticate",function(req,res){
   });
 });
 
-router.post("/check",function(req,res){
-  searchInfo.find({"user_id" : req.body.id}, function(err,data){
+router.get("/check",function(req,res){
+  searchInfo.find({"user_id" : req.session.userId}, function(err,data){
     if(err){
       res.send(err);
     }
