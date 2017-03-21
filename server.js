@@ -13,7 +13,7 @@ app.use(express.static("static_files"));
 
 app.get("/map",function(req,res){
   if(req.session.userId)
-    res.sendFile(path.join(__dirname + "/views"+"/map.html"));
+    res.sendFile(path.join(__dirname + "/views"+"/angular-map.html"));
   else{
     res.redirect("/");
   }

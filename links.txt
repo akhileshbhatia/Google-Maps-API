@@ -15,3 +15,7 @@ https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
 
 Using mongoose with node/express app:
 https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+
+Maps and Angular JS
+https://ngmap.github.io/
+https://ngmap.github.io/#/!places-auto-complete.html

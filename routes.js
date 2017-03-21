@@ -8,7 +8,8 @@ router.post("/authenticate",function(req,res){
     if(err)
       res.send(err);
     else{
-      req.session.userId = data[0]._id;
+      if(data.length > 0) //add to session only when credentials are ok
+        req.session.userId = data[0]._id;
       res.json(data);
     }
   });
