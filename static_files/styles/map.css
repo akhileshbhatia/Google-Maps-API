@@ -3,3 +3,11 @@ ng-map{
   height: 100%;
   width: 100%;
 }
+
+no-overflow{
+  overflow-x : none;
+}
+
+overflow-x{
+  overflow-x: scroll;
+}
