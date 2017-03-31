@@ -27,46 +27,47 @@
           <div style="margin-top:0.5%">
             <div class="col-xs-offset-2 col-xs-3" style="margin-left:21.3%">
               <input type="text" placeholder="Source" class="form-control" ng-model="source"
+              ng-change = "CheckIfShowDirections()"
               places-auto-complete component-restrictions="{country : 'in'}"
               on-place-changed="PlaceChanged()"/>
             </div>
             <div class="col-xs-3">
               <input type="text" placeholder="Destination" class="form-control" ng-model="destination"
+              ng-change = "CheckIfShowDirections()"
               places-auto-complete component-restrictions="{country : 'in'}"
               on-place-changed="PlaceChanged()"/>
             </div>
             <div class="col-xs-2" style="width:12%">
-              <button class="btn btn-primary" ng-click="temp()">Search</button>
+              <button class="btn btn-primary" ng-click="showDirections = true">Search</button>
             </div>
           </div>
-          <div class="col-xs-offset-4 col-xs-1" style="margin-top: 1%">
-            <a style="cursor:pointer" ng-click="logOff()">Log Off</a>
+          <div class="col-xs-1" style="margin-top: 1%">
+            <a style="cursor:pointer" ng-click="LogOff()">Log Off</a>
           </div>
         </div>
       </div>
       <div class="panel-body">
         <div class="row">
-          <div ng-class="source.length > 0 && destination.length > 0 ? 'col-xs-8' : 'col-xs-12'"
-            style="height: 495px;">
-            <ng-map center="current-position" default-style="false" zoom="15">
-              <directions
-              draggable="true"
-              panel="directionsPanel"
-              travel-mode="DRIVING"
-              origin="{{source}}"
-              destination="{{destination}}">
-            </directions>
-          </ng-map>
-        </div>
-        <div ng-show="source.length > 0 && destination.length > 0" class="col-xs-4" id="directionsPanel"
-          style="height: 495px;overflow-y: scroll">
-        </div>
+          <div ng-class="showDirections ? 'col-xs-8' : 'col-xs-12'"
+          style="height: 495px;">
+          <ng-map center="current-position" default-style="false" zoom="15">
+            <directions
+            id="dir"
+            draggable="true"
+            panel="directionsPanel"
+            travel-mode="DRIVING"
+            origin="{{source}}"
+            destination="{{destination}}">
+          </directions>
+        </ng-map>
       </div>
-    </div>
-    <div class="panel-footer text-right">
-      <mark>Google Maps!</mark>
+      <div ng-show="showDirections" class="col-xs-4" id="directionsPanel" style="height: 495px;overflow-y: scroll"></div>
     </div>
   </div>
+  <div class="panel-footer text-right">
+    <mark>Google Maps!</mark>
+  </div>
+</div>
 </div>
 </body>
 </html>
