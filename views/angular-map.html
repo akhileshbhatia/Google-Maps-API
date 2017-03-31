@@ -17,7 +17,7 @@
 </head>
 
 <body ng-app="mapApp" ng-controller="mapController">
-  <div class="container">
+  <div class="container-fluid">
     <div class="panel panel-info">
       <div class="panel-heading">
         <div class="row">
@@ -49,7 +49,7 @@
       <div class="panel-body">
         <div class="row">
           <div ng-class="showDirections ? 'col-xs-8' : 'col-xs-12'"
-          style="height: 495px;">
+          style="height: 550px;">
           <ng-map center="current-position" default-style="false" zoom="15">
             <directions
             id="dir"
@@ -61,7 +61,7 @@
           </directions>
         </ng-map>
       </div>
-      <div ng-show="showDirections" class="col-xs-4" id="directionsPanel" style="height: 495px;overflow-y: scroll"></div>
+      <div ng-show="showDirections" class="col-xs-4" id="directionsPanel" style="height: 550px;overflow-y: scroll"></div>
     </div>
   </div>
   <div class="panel-footer text-right">
